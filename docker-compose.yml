@@ -1,0 +1,29 @@
+version: '3'
+services:
+  app:
+    container_name: websurvey-node
+    restart: always
+    build: ../websurvey-api
+    ports:
+      - '3001:3001'
+      # - '443:3001'
+    links:
+      - mongo
+    volumes:
+      - './public/data:/public/data'
+      - '/etc/letsencrypt:/etc/letsencrypt'
+  mongo:
+    container_name: websurvey-mongo
+    image: mongo:4
+    ports:
+      - '27017:27017'
+    # volumes:
+    #   - './db:/data/db'
+
+  angular:
+    container_name: websurvey-angular
+    build: ../websurvey-angular
+    links:
+      - app
+    ports:
+      - '80:4200'
