@@ -15,8 +15,6 @@ services:
   mongo:
     container_name: websurvey-mongo
     image: mongo:4
-    ports:
-      - '27017:27017'
     # volumes:
     #   - './db:/data/db'
 
@@ -26,4 +24,4 @@ services:
     links:
       - app
     ports:
-      - '80:4200'
+      - '80:80'
