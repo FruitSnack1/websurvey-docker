@@ -5,8 +5,8 @@ services:
     restart: always
     build: ../websurvey-api
     ports:
-      - '3001:3001'
-      # - '443:3001'
+      # - '3001:3001'
+      - '80:3001'
     links:
       - mongo
     volumes:
