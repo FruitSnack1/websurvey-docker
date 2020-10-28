@@ -15,8 +15,8 @@ services:
   mongo:
     container_name: websurvey-mongo
     image: mongo:4
-    # volumes:
-    #   - './db:/data/db'
+    volumes:
+      - './db:/data/db'
 
   angular:
     container_name: websurvey-angular
