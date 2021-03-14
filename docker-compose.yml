@@ -10,7 +10,7 @@ services:
     links:
       - mongo
     volumes:
-      - './public/data:/public/data'
+      - './public:/public'
       - '/etc/letsencrypt:/etc/letsencrypt'
   mongo:
     container_name: websurvey-mongo
