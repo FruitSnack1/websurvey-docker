@@ -24,4 +24,4 @@ services:
     links:
       - app
     ports:
-      - '3000:443'
+      - '3000:80'
